@@ -42,7 +42,6 @@ function App() {
     let d = document.querySelectorAll("#about > a");
     let e = document.getElementById("linkedinfixed");
     let CombinedList = [...a,...b,...c,...d,e];
-    console.log(CombinedList)
     setTimeout(() => {
       document.body.style.overflow = "auto"; // Restores default scrolling behavior
 

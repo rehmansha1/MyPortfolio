@@ -460,8 +460,11 @@ h1 {
   transition: opacity 0.4s;
 }
 @media only screen and (max-width: 768px) {
+  #sections{
+    display: none;
+  }
   #Header{
-    display: None;
+    position: absolute;
   }
   #arrow{
     left: 80%;
