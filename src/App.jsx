@@ -39,7 +39,7 @@ function App() {
     let a = document.querySelectorAll('#sections > div');
     let b = document.querySelectorAll("#about > h1");
     let c = document.querySelectorAll("#about > p");
-    let d = document.querySelectorAll("#about > div");
+    let d = document.querySelectorAll("#about > a");
     let e = document.getElementById("linkedinfixed");
     let CombinedList = [...a,...b,...c,...d,e];
     console.log(CombinedList)
@@ -248,9 +248,7 @@ function App() {
               functionality. I’m always eager to learn new technologies and
               enhance my skills to build innovative solutions.
             </p>
-            <div id="bt-resume" onClick={()=>{
-              window.open('../src/assets/resume.pdf')
-            }}>Resume</div>
+            <a id="bt-resume" href="https://drive.google.com/file/d/1Rcv6LpYROol6xwswl9xv4uVmsqraSf_z/view?usp=drive_link" target="_blank">Resume</a>
           </div>
         </div>
         <svg

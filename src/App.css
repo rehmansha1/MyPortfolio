@@ -128,6 +128,9 @@ h1 {
   border-radius: 5px;
   font-family: monospace;
   align-self: flex-start;
+  text-decoration: none;
+  color: #ffffffde;
+
 }
 #bt-resume:hover {
   background-color: rgba(255, 255, 255, 0.1);
