@@ -1,0 +1,534 @@
+.path {
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2500;
+  animation: dash 1s ease-in forwards;
+}
+
+.square {
+  rotate: 150deg;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+#n {
+  font-size: 80px;
+}
+#Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0px;
+  margin-right: 100px !important;
+  position: fixed;
+padding-bottom: 10px;
+  min-width: 100%;
+  top: 0;
+  opacity: 0;
+  transition: all 0.3s;
+  background-color: #242424;
+  z-index: 12;
+  height: 70px;
+padding-top: 10px;
+}
+
+#Header.hidden {
+  top: -100px; /* adjust to header height */
+}
+#sections {
+  display: flex;
+  gap: 50px;
+  padding-right: 50px;
+  font-size: 15px;
+  font-family: monospace;
+}
+#sections > div {
+  position: relative;
+  top: -100px;
+  cursor: pointer;
+  font-size: 15px;
+  opacity: 0;
+}
+#sections > div > a {
+  text-decoration: none;
+  color: #ffffffde;
+  cursor: pointer;
+}
+#logo-outer{
+  position: relative;
+  height: 75px;
+  width: 75px;
+  left: 10px;
+
+}
+#logo-symbol{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+font-weight: bold;
+  
+}
+#logo {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+
+  animation: infint1e 10s linear infinite;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+#name1 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+#arrow {
+  opacity: 0;
+  position: absolute;
+  left: 90%;
+  top: 85%;
+  scale: 1.5;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+#about-outer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#about {
+  left: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 50%;
+
+}
+#about-para{
+  opacity: 0;
+  width: 40%;
+  font-size: 14px;
+}
+#bt-resume {
+  opacity: 0; 
+  border: 1px solid white;
+  max-width: 100%;
+  background-color: transparent;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  align-self: flex-start;
+}
+#bt-resume:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+#about-name{
+  font-size: 4.7vw;  /* 80px */
+}
+#buildthings {
+  font-size: 2.8vw; /*50px*/
+  
+}
+#hi-text {
+  font-size: 16px !important;
+  opacity: 0;
+  font-family: monospace;
+}
+
+#about > h1 {
+  opacity: 0;
+}
+#projects {
+  height: 210vh !important;
+  display: flex;
+  justify-content: center;
+  width: var(--vw);
+}
+#projects > div {
+  margin-top: 100px;
+}
+.projectHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#lineProject {
+  width: 0px;
+  height: 1px;
+  background-color: white;
+  opacity: 0.5;
+}
+/*project window section */
+
+.project-window {
+  height: 350px;
+  display: flex;
+  width: 50vw;
+  padding-top: 100px;
+}
+
+.image-of-project {
+  width: 60%;
+  background-color: #636262;
+  border-radius: 10px;
+  height: 100%;
+  transition: all 0.3s;
+}
+.image-of-project:hover {
+  background-color: transparent;
+}
+#imagep {
+  height: 100%;
+}
+.details-of-project {
+  width: 40%;
+  height: 100%;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.details-of-project:hover {
+  background-color: transparent;
+}
+.details-of-project > div {
+  text-align: right;
+  padding-right: 10px;
+}
+.details-of-project1 > div {
+  padding-right: 10px;
+}
+.recentornot {
+  font-family: monospace;
+  position: relative;
+}
+.Project-detail {
+  border: 1px solid transparent;
+  height: 150px;
+  padding: 10px;
+  width: 120%;
+  border-radius: 5px;
+  margin-left: -20%;
+  font-size: 2vh;
+  background-color: #333333;
+}
+.tech-stack {
+}
+#gitsvg {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  left: 90%;
+}
+/* intro */
+
+#logoPage {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #242424;
+  z-index: 111;
+}
+#innerSquare {
+  position: absolute;
+  scale: 3.5;
+  opacity: 0;
+  transition: all 0.3s;
+  animation: opacityIS 0.3s 1s both;
+  font-weight: bold;
+}
+/* end of intro */
+
+/* never to do used again */
+
+/* end of never to do used again */
+
+/* ANIMATIONS */
+@keyframes infint1e {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes opacityIS {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes scale {
+  0% {
+    scale: 3.5;
+  }
+  100% {
+    scale: 0;
+  }
+}
+/* END OF ANIMTAIONS */
+
+.project2-win {
+  width: 50vw;
+  height: 300px;
+  background-color: #333333;
+  margin-top: 100px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 200px;
+  opacity: 0;
+  /* enable this only for mobile 
+  padding: 10px; 
+  width:70vw;
+  */
+}
+.project2-win > div,
+.project2-win > p,
+.project2-win > h1 {
+  position: relative;
+  left: 5%;
+}
+.name-project {
+  font-size: 20px;
+}
+.stack-project {
+  display: flex;
+  gap: 10px;
+}
+.para-project {
+  word-wrap: break-word;
+  padding-right: 40px;
+}
+.git-project {
+  padding-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.git-project > a >  svg {
+  height: 20px;
+  width: 20px;
+}
+.git-project > a {
+  color: #ffffffde;
+
+}
+.contact {
+  height: 100vh;
+  width: var(--vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contactCard {
+  position: relative;
+  top: 10%;
+  opacity: 0;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.title-contact {
+  display: flex;
+  gap: 10px;
+  font-family: monospace;
+  font-size: 20px;
+}
+.get-in-touch {
+  font-size: 50px;
+}
+.p-contact {
+  opacity: 0.5;
+  text-align: center;
+}
+#bt-hello {
+  opacity: 1;
+  border: 1px solid white;
+  max-width: 100%;
+  background-color: transparent;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: white;
+}
+#bt-hello:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+#line {
+  height: 0%;
+  width: 1px;
+  background-color: grey;
+  position: fixed;
+  top: 80%;
+  left: 40px;
+  rotate: 0deg;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+/* svg of the left fixed */
+#linkedinfixed > a >  svg {
+  height: 20px;
+  width: 20px;
+}
+#linkedinfixed > a {
+  text-decoration: none;
+  color: #ffffffde;
+
+}
+#linkedinfixed {
+  position: fixed;
+  top: 75%;
+  left: 30px;
+  opacity: 0;
+  z-index: 1;
+}
+#gitfixed > a > svg{
+  height: 20px;
+  width: 20px;
+}
+#gitfixed > a {
+  text-decoration: none;
+  color: #ffffffde;
+
+}
+#gitfixed {
+  position: fixed;
+  top: 70%;
+  left: 30px;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.4s;
+
+}
+#mailfixed > a > svg{
+ height: 20px;
+ width: 20px; 
+}
+#mailfixed > a{
+  text-decoration: none;
+  color: #ffffffde;
+
+}
+#mailfixed{
+  position: fixed;
+  top: 65%;
+  left: 30px;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.4s;
+}
+@media only screen and (max-width: 768px) {
+  #Header{
+    display: None;
+  }
+  #arrow{
+    left: 80%;
+  }
+  #linkedinfixed{
+    display: None;
+  }
+  #gitfixed{
+    display: None;
+  }
+  #mailfixed{
+    display: none;
+  }
+  #line{
+    display: None;
+  }
+  #about{
+    width: 60%;
+  }
+  #about-name{
+    font-size: 8vw;
+  }
+  #about-para{
+    width: 100%;
+  }
+  #lineProject{
+    display: none;
+  }
+  .name-project{
+    font-size: 15px;
+  }
+  #projects{
+    padding-top: 50px;
+  }
+  #projects > div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project2-win{
+    padding: 20px;
+    width: 80%;
+  
+  }
+  .type-Project{
+    font-family: monospace;
+  }
+  .para-project{
+    padding-right: 0px;
+    width: 95%;
+    font-size: 3.2vw;
+    opacity: 0.8;
+    
+  }
+  .stack-project{
+
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .stack-project > div{
+    font-size: 13px;
+  }
+.title-contact{
+  font-size: 4.2vw;
+}
+.get-in-touch{
+  font-size: 10vw;
+}
+.p-contact{
+  font-size: 4.2vw;
+  padding: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+}
+#bt-hello{
+  padding: 15px;
+}
+}
