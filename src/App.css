@@ -459,6 +459,7 @@ h1 {
   z-index: 1;
   transition: opacity 0.4s;
 }
+
 @media only screen and (max-width: 768px) {
   #sections{
     display: none;
@@ -477,6 +478,10 @@ h1 {
   }
   #mailfixed{
     display: none;
+  }
+  #projectSection > div{
+    font-family: monospace;
+    font-size: 15px;
   }
   #line{
     display: None;
