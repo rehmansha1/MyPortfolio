@@ -12,7 +12,7 @@ function App() {
     // on viewport animations
     gsap.to("#lineProject", {
       scrollTrigger: "#lineProject",
-      width: "300px",
+      width: "200px",
       duration: 2,
     });
     gsap.utils.toArray(".project2-win").forEach((element) => {
