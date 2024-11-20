@@ -26,7 +26,7 @@ function App() {
       });
     });
     gsap.to(".contactCard", {
-      scrollTrigger: ".contactCard",
+      scrollTrigger: ".contact",
       top: "0%",
       opacity: 1,
       duration: 0.5,
@@ -96,7 +96,7 @@ function App() {
       if (scrollY >= 627) {
         document.getElementById("gitfixed").style.opacity = 1;
       }
-      if (scrollY >= 2500) {
+      if (scrollY + window.innerHeight >= document.documentElement.scrollHeight-200) {
         document.getElementById("mailfixed").style.opacity = 1;
       }
     });
