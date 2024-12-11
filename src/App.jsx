@@ -65,6 +65,27 @@ function App() {
           index * 0.2 // stagger time
         );
       });
+      const hoverBox = document.querySelector('#boxhover');
+      const links = document.querySelectorAll('#sections > div ');
+      
+      links.forEach(link => {
+        link.addEventListener('mouseenter', (e) => {
+          const rect = e.target.getBoundingClientRect();
+         if(hoverBox){
+          hoverBox.style.width = `${rect.width}px`;
+          hoverBox.style.height = `${rect.height}px`;
+          hoverBox.style.left = `${rect.left}px`;
+          hoverBox.style.top = `${rect.top}px`;
+          hoverBox.classList.add('slow');
+         }
+        });
+      });
+      
+      document.getElementById("sections").addEventListener('mouseleave', () => {
+        // Optionally reset the hover box if leaving the container
+
+
+      });
     }, 2000);
   }, []);
   useEffect(() => {
@@ -100,6 +121,7 @@ function App() {
       }
     });
   }, []);
+
   setTimeout(() => {
 
     document.getElementById("logoPage").style.transition = "all 0.4s";
@@ -222,19 +244,21 @@ function App() {
           <div id="logo-symbol">R</div>
         </div>
         <div id="sections">
-          <div>
+          <div id="skip1" onClick={()=>document.querySelector('#skip1 > a').click()}>
             <a href="#about-outer">01. About</a>
           </div>
-          <div>
+          <div id="skip2" onClick={()=>document.querySelector('#skip2 > a').click()}>
             <a href="#projects" id="project-go">
               02. Projects
             </a>
           </div>
-          <div>
+          <div id="skip3" onClick={()=>document.querySelector('#skip3 > a').click()}>
             <a href="#contactSection">03. Contact</a>
           </div>
         </div>
+        <div id="boxhover"></div>
       </div>
+
       <div>
         <div id="about-outer">
           <div id="about">
@@ -288,8 +312,9 @@ function App() {
               <div>React</div>
             </div>
             <div className="git-project">
-            <a>
+            <a href="https://github.com/rehmansha1/txt-compressor" target="_blank">
               <svg
+              
                 xmlns="http://www.w3.org/2000/svg"
                 role="img"
                 viewBox="0 0 24 24"
