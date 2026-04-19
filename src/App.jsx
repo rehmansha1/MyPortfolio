@@ -7,31 +7,140 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 function App() {
   gsap.registerPlugin(ScrollTrigger);
-
-  useEffect(() => {
-    // on viewport animations
-    gsap.to("#lineProject", {
-      scrollTrigger: "#lineProject",
+const projects = [
+  {
+    type: "Most Recent",
+    title: "LocalAI",
+    description:
+      "Fully local AI app running GGUF models on-device using llama.cpp. Supports chat, image understanding, and offline inference.",
+    stack: ["React Native", "llama.cpp", "Android", "AI"],
+    github: "https://github.com/rehmansha1/LocalAI",
+  },
+  {
+    type: "Featured Project",
+    title: "File Compression Tool",
+    description:
+      "A lightweight file compression tool using Huffman Coding algorithm.",
+    stack: ["JavaScript", "React"],
+    github: "https://github.com/rehmansha1/txt-compressor",
+  },
+  {
+    type: "Featured Project",
+    title: "My Movie List",
+    description:
+      "Movie/series platform with watchlist and search functionality.",
+    stack: ["JavaScript", "React", "Redux", "Express", "Node", "MongoDB"],
+    github: "https://github.com/rehmansha1/MyMovieList",
+    live: "https://mymovielist-mkra.onrender.com/",
+  },
+  {
+    type: "Featured Project",
+    title: "File Sharing Application",
+    description:
+      "Secure file sharing platform for seamless collaboration.",
+    stack: ["JavaScript", "React", "Express", "Node", "MongoDB"],
+    github: "https://github.com/rehmansha1/File-Sharing-site",
+    live: "https://file-sharing-site-8t90.onrender.com/",
+  },
+  {
+    type: "Featured Project",
+    title: "PriceChecker",
+    description:
+      "Scrapes product prices from multiple stores for comparison.",
+    stack: ["JavaScript", "React", "Puppeteer", "Express", "Node"],
+    github: "https://github.com/rehmansha1/PriceChecker",
+  },
+  {
+    type: "Featured Project",
+    title: "Circle to Search",
+    description:
+      "Select any part of the screen and search instantly.",
+    stack: ["React Native", "Android"],
+    github: "https://github.com/rehmansha1/circle-to-search",
+  },
+  {
+    type: "Featured Project",
+    title: "Automated Blogs",
+    description:
+      "AI-powered system that generates blogs automatically.",
+    stack: ["Node.js", "MongoDB", "AI"],
+    github: "https://github.com/rehmansha1/automated-Blogs",
+  },
+  {
+    type: "Featured Project",
+    title: "Multiplayer Drawing Game",
+    description:
+      "Real-time drawing & guessing game using WebSockets.",
+    stack: ["React", "Socket.IO", "Node.js"],
+    github: "https://github.com/rehmansha1/multiplayer-drawing-game",
+  },
+  {
+    type: "Featured Project",
+    title: "Ecommerce Site",
+    description:
+      "Full-stack ecommerce platform with cart and orders.",
+    stack: ["MERN"],
+    github: "https://github.com/rehmansha1/ecommerce-site",
+  },
+  {
+    type: "Featured Project",
+    title: "Image Clustering",
+    description:
+      "ML project grouping similar images using clustering algorithms.",
+    stack: ["Python", "OpenCV", "ML"],
+    github: "https://github.com/rehmansha1/image-clustering",
+  },
+];
+useEffect(() => {
+  // Line animation
+  gsap.fromTo(
+    "#lineProject",
+    { width: "0px" },
+    {
+      scrollTrigger: {
+        trigger: "#lineProject",
+        start: "top 85%",
+      },
       width: "200px",
-      duration: 2,
-    });
-    gsap.utils.toArray(".project2-win").forEach((element) => {
-      gsap.to(element, {
+      duration: 1.5,
+      ease: "power2.out",
+    }
+  );
+
+  // Project cards — slide up + fade in (use y, not marginTop)
+  gsap.utils.toArray(".project2-win").forEach((element) => {
+    gsap.fromTo(
+      element,
+      { y: 50, opacity: 0 },
+      {
         scrollTrigger: {
           trigger: element,
+          start: "top 88%",
         },
-        marginTop: "100px",
-        opacity: "1",
-        duration: 0.3,
-      });
-    });
-    gsap.to(".contactCard", {
-      scrollTrigger: ".contact",
-      top: "0%",
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.out",
+      }
+    );
+  });
+
+  // Contact card
+  gsap.fromTo(
+    ".contactCard",
+    { y: 60, opacity: 0 },
+    {
+      scrollTrigger: {
+        trigger: ".contact",
+        start: "top 80%",
+      },
+      y: 0,
       opacity: 1,
-      duration: 0.5,
-    });
-  }, []);
+      duration: 0.6,
+      ease: "power2.out",
+    }
+  );
+}, []);
   useEffect(() => {
     // about delay after 2 sec
     const timeline = gsap.timeline();
@@ -298,197 +407,60 @@ function App() {
             <div id="lineProject"></div>
           </div>
 
-          <div className="project2-win">
-            <div className="type-Project">Most Recent</div>
-            <h1 className="name-project">File Compression Tool</h1>
-            <p className="para-project">
-              {" "}
-              A file Compression tool made with huffman coding algorith. A
-              lightweight, efficient, and easy-to-use file compression utility
-              leveraging the Huffman Coding algorithm to reduce file sizes.
-            </p>
-            <div className="stack-project">
-              <div>Javascript</div>
-              <div>React</div>
-            </div>
-            <div className="git-project">
-            <a href="https://github.com/rehmansha1/txt-compressor" target="_blank">
-              <svg
-              
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-github"
-              >
-                <title>GitHub</title>
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-              </a>
-              <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-external-link"
-              >
-                <title>External Link</title>
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-              </a>
-            </div>
-          </div>
-          <div className="project2-win">
-            <div className="type-Project">Featured Project</div>
-            <h1 className="name-project">My Movie List</h1>
-            <p className="para-project">
-              Bulit a movie/series viewing webiste, allows users to make their
-              own watchlist and look up their favorite tv shows/movies, much
-              like letterbox.
-            </p>
-            <div className="stack-project">
-              <div>Javascript</div>
-              <div>React</div>
-              <div>Redux</div>
-              <div>Express</div>
-              <div>Node</div>
-              <div>Mongodb</div>
-            </div>
-            <div className="git-project">
-            <a href="https://github.com/rehmansha1/MyMovieList" target="_blank">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-github"
-              >
-                <title>GitHub</title>
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-              </a>
-              <a href="https://mymovielist-mkra.onrender.com/" target="_blank">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-external-link"
-              >
-                <title>External Link</title>
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-              </a>
-            </div>
-          </div>
-          <div className="project2-win">
-            <div className="type-Project">Featured Project</div>
-            <h1 className="name-project">File Sharing Application</h1>
-            <p className="para-project">
-              Built a modern file sharing platform for seamless, secure
-              collaboration. Share files effortlessly, ensuring privacy and
-              efficiency
-            </p>
-            <div className="stack-project">
-              <div>Javascript</div>
-              <div>React</div>
-              <div>Express</div>
-              <div>Node</div>
-              <div>Mongodb</div>
-            </div>
-            <div className="git-project">
-              
-              <a href="https://github.com/rehmansha1/File-Sharing-site" target="_blank"><svg 
+{projects.map((project, index) => (
+  <div className="project2-win" key={index}>
+    <div className="type-Project">{project.type}</div>
 
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-github"
-              >
-                <title>GitHub</title>
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-              </a>
-              <a href="https://file-sharing-site-8t90.onrender.com/" target="_blabk"><svg
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-external-link"
-              >
-                <title>External Link</title>
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-              </a>
-            </div>
-          </div>
-          <div className="project2-win">
-            <div className="type-Project">Featured Project</div>
-            <h1 className="name-project">PriceChecker</h1>
-            <p className="para-project">
-              Built a pricechecking website that scrapes product prices from
-              various online stores. Allowing users to make well-informed
-              purchasing decisions. It also keeps up with up-to-date pricing
-              information.
-            </p>
-            <div className="stack-project">
-              <div>Javascript</div>
-              <div>React</div>
-              <div>Puppeteer</div>
-              <div>Express</div>
-              <div>Node</div>
-            </div>
-            <div className="git-project">
-              <a href="https://github.com/rehmansha1/PriceChecker" target="_blank"><svg
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-github"
-              >
-                <title>GitHub</title>
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-              </a>
-   
-            </div>
-          </div>
+    <h1 className="name-project">{project.title}</h1>
+
+    <p className="para-project">{project.description}</p>
+
+    <div className="stack-project">
+      {project.stack.map((tech, i) => (
+        <div key={i}>{tech}</div>
+      ))}
+    </div>
+
+    <div className="git-project">
+      <a href={project.github} target="_blank">
+        {/* reuse your github svg */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="feather feather-github"
+        >
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+
+      {project.live && (
+        <a href={project.live} target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="feather feather-external-link"
+          >
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      )}
+    </div>
+  </div>
+))}
         </div>
       </div>
       <div className="contact" id="contactSection">

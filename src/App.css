@@ -551,7 +551,7 @@ h1 {
   .project2-win{
     padding: 20px;
     width: 80%;
-  
+  opacity: 0;
   }
   .type-Project{
     font-family: monospace;
