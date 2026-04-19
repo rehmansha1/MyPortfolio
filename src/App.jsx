@@ -380,7 +380,7 @@ useEffect(() => {
               functionality. I’m always eager to learn new technologies and
               enhance my skills to build innovative solutions.
             </p>
-            <a id="bt-resume" href="https://drive.google.com/file/d/1Rcv6LpYROol6xwswl9xv4uVmsqraSf_z/view?usp=drive_link" target="_blank">Resume</a>
+            <a id="bt-resume" href="https://drive.google.com/file/d/1K7cwGLbcvGRCyELinKjicoHd4q0ufa72/view?usp=sharing" target="_blank">Resume</a>
           </div>
         </div>
         <svg

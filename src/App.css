@@ -22,19 +22,22 @@
   padding-left: 0px;
   margin-right: 100px !important;
   position: fixed;
-padding-bottom: 10px;
+  padding-bottom: 10px;
   min-width: 100%;
   top: 0;
   opacity: 0;
   transition: all 0.3s;
-  background-color: #242424;
+  background-color: #0a0f1ecc;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #1e3a5f55;
   z-index: 12;
   height: 70px;
-padding-top: 10px;
+  padding-top: 10px;
 }
 
 #Header.hidden {
-  top: -100px; /* adjust to header height */
+  top: -100px;
 }
 #sections {
   display: flex;
@@ -54,62 +57,57 @@ padding-top: 10px;
 }
 #sections > div > a {
   text-decoration: none;
-  color: #ffffffde;
+  color: #a8b2d8;
   cursor: pointer;
   z-index: 16;
 }
-#boxhover{
-
+#sections > div > a:hover {
+  color: #64ffda;
+}
+#boxhover {
   position: absolute;
   top: 0;
   left: 0;
   width: 0;
   height: 0;
   opacity: 0;
-background-color: rgb(255, 255, 255,0.1);
-
+  background-color: rgba(100, 255, 218, 0.07);
   border-radius: 8px;
-  pointer-events: none; /* Makes the box unclickable */
-  transition: all 0.3s ease; /* Smooth movement and resizing */
-  
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
-#boxhover.slow{
+#boxhover.slow {
   animation: slowopacity 0.1s 0.3s both;
 }
 
-
 @keyframes slowopacity {
-  0%{
+  0% {
     opacity: 0;
-    background-color: rgb(255, 255, 255,0.1);
-
+    background-color: rgba(100, 255, 218, 0.07);
   }
-  100%{
+  100% {
     opacity: 1;
-    background-color: rgb(255, 255, 255,0.1);
-
+    background-color: rgba(100, 255, 218, 0.07);
   }
 }
-#logo-outer{
+#logo-outer {
   position: relative;
   height: 75px;
   width: 75px;
   left: 10px;
-
 }
-#logo-symbol{
+#logo-symbol {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-font-weight: bold;
-  
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: #64ffda;
 }
 #logo {
   height: 100%;
   width: 100%;
   cursor: pointer;
-
   animation: infint1e 10s linear infinite;
 }
 
@@ -131,6 +129,8 @@ h1 {
   scale: 1.5;
   transition: opacity 0.3s;
   cursor: pointer;
+  color: #64ffda;
+  fill: #64ffda;
 }
 
 #about-outer {
@@ -138,7 +138,6 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 #about {
   left: 20%;
@@ -146,16 +145,16 @@ h1 {
   flex-direction: column;
   gap: 15px;
   width: 50%;
-
 }
-#about-para{
+#about-para {
   opacity: 0;
   width: 40%;
   font-size: 14px;
+  color: #8892b0;
 }
 #bt-resume {
-  opacity: 0; 
-  border: 1px solid white;
+  opacity: 0;
+  border: 1px solid #64ffda;
   max-width: 100%;
   background-color: transparent;
   padding: 10px;
@@ -164,24 +163,25 @@ h1 {
   font-family: monospace;
   align-self: flex-start;
   text-decoration: none;
-  color: #ffffffde;
-
+  color: #64ffda;
 }
 #bt-resume:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(100, 255, 218, 0.1);
   cursor: pointer;
 }
-#about-name{
-  font-size: 4.7vw;  /* 80px */
+#about-name {
+  font-size: 4.7vw;
+  color: #ccd6f6;
 }
 #buildthings {
-  font-size: 2.8vw; /*50px*/
-  
+  font-size: 2.8vw;
+  color: #8892b0;
 }
 #hi-text {
   font-size: 16px !important;
   opacity: 0;
   font-family: monospace;
+  color: #64ffda;
 }
 
 #about > h1 {
@@ -198,22 +198,19 @@ h1 {
   height: 100%;
   display: flex;
   flex-direction: column;
-  
-
 }
 .projectHeader {
   display: flex;
   gap: 10px;
   align-items: center;
+  color: #ccd6f6;
 }
 #lineProject {
   width: 0px;
   height: 1px;
-  background-color: white;
-  opacity: 0.5;
-
+  background-color: #233554;
+  opacity: 1;
 }
-/*project window section */
 
 .project-window {
   height: 350px;
@@ -224,7 +221,7 @@ h1 {
 
 .image-of-project {
   width: 60%;
-  background-color: #636262;
+  background-color: #112240;
   border-radius: 10px;
   height: 100%;
   transition: all 0.3s;
@@ -257,27 +254,28 @@ h1 {
 .recentornot {
   font-family: monospace;
   position: relative;
+  color: #64ffda;
 }
 .Project-detail {
-  border: 1px solid transparent;
+  border: 1px solid #1e3a5f;
   height: 150px;
   padding: 10px;
   width: 120%;
   border-radius: 5px;
   margin-left: -20%;
   font-size: 2vh;
-  background-color: #333333;
+  background-color: #112240;
+  color: #a8b2d8;
 }
-.tech-stack {
-}
+
 #gitsvg {
   height: 20px;
   width: 20px;
   position: relative;
   left: 90%;
 }
-/* intro */
 
+/* intro */
 #logoPage {
   position: fixed;
   height: 100vh;
@@ -285,7 +283,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #242424;
+  background-color: #0a0f1e;
   z-index: 111;
 }
 #innerSquare {
@@ -295,12 +293,9 @@ h1 {
   transition: all 0.3s;
   animation: opacityIS 0.3s 1s both;
   font-weight: bold;
+  color: #64ffda;
 }
 /* end of intro */
-
-/* never to do used again */
-
-/* end of never to do used again */
 
 /* ANIMATIONS */
 @keyframes infint1e {
@@ -327,26 +322,29 @@ h1 {
     scale: 0;
   }
 }
-/* END OF ANIMTAIONS */
+/* END OF ANIMATIONS */
 
 .project2-win {
+  height: auto;
+  display: flex;
   width: 50vw;
-  height: 300px;
-  background-color: #333333;
-  margin-top: 100px;
+  padding-top: 100px;
+  background-color: #0d1b2e;
+  border: 1px solid #1e3a5f;
+  margin-top: 200px;
   border-radius: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  margin-top: 200px;
   opacity: 0;
-  padding: 10px;
-  /* enable this only for mobile 
-  padding: 10px; 
-  width:70vw;
-  */
+  padding: 30px;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+.project2-win:hover {
+  border-color: #64ffda44;
+  background-color: #112240;
 }
 .project2-win > div,
 .project2-win > p,
@@ -356,6 +354,7 @@ h1 {
 }
 .name-project {
   font-size: 20px;
+  color: #ccd6f6;
 }
 .stack-project {
   display: flex;
@@ -363,23 +362,35 @@ h1 {
   flex-wrap: wrap;
   width: 90%;
   font-size: 15px;
+  font-family: monospace;
+  color: #64ffda;
 }
 .para-project {
   word-wrap: break-word;
   padding-right: 40px;
+  color: #8892b0;
 }
 .git-project {
   padding-top: 20px;
   display: flex;
   gap: 10px;
 }
-.git-project > a >  svg {
+.git-project > a > svg {
   height: 20px;
   width: 20px;
+  color: #a8b2d8;
+  transition: color 0.2s;
+}
+.git-project > a > svg:hover {
+  color: #64ffda;
 }
 .git-project > a {
-  color: #ffffffde;
-
+  color: #a8b2d8;
+}
+.type-Project {
+  font-family: monospace;
+  color: #64ffda;
+  font-size: 13px;
 }
 .contact {
   height: 100vh;
@@ -404,17 +415,20 @@ h1 {
   gap: 10px;
   font-family: monospace;
   font-size: 20px;
+  color: #64ffda;
 }
 .get-in-touch {
   font-size: 50px;
+  color: #ccd6f6;
 }
 .p-contact {
-  opacity: 0.5;
+  opacity: 0.6;
   text-align: center;
+  color: #8892b0;
 }
 #bt-hello {
   opacity: 1;
-  border: 1px solid white;
+  border: 1px solid #64ffda;
   max-width: 100%;
   background-color: transparent;
   padding: 10px;
@@ -423,17 +437,17 @@ h1 {
   font-family: monospace;
   transition: all 0.3s;
   text-decoration: none;
-  color: white;
+  color: #64ffda;
 }
 #bt-hello:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(100, 255, 218, 0.1);
   cursor: pointer;
 }
 
 #line {
   height: 0%;
   width: 1px;
-  background-color: grey;
+  background-color: #233554;
   position: fixed;
   top: 80%;
   left: 40px;
@@ -443,14 +457,18 @@ h1 {
 }
 
 /* svg of the left fixed */
-#linkedinfixed > a >  svg {
+#linkedinfixed > a > svg {
   height: 20px;
   width: 20px;
+  color: #a8b2d8;
+  transition: color 0.2s;
+}
+#linkedinfixed > a > svg:hover {
+  color: #64ffda;
 }
 #linkedinfixed > a {
   text-decoration: none;
-  color: #ffffffde;
-
+  color: #a8b2d8;
 }
 #linkedinfixed {
   position: fixed;
@@ -459,14 +477,18 @@ h1 {
   opacity: 0;
   z-index: 1;
 }
-#gitfixed > a > svg{
+#gitfixed > a > svg {
   height: 20px;
   width: 20px;
+  color: #a8b2d8;
+  transition: color 0.2s;
+}
+#gitfixed > a > svg:hover {
+  color: #64ffda;
 }
 #gitfixed > a {
   text-decoration: none;
-  color: #ffffffde;
-
+  color: #a8b2d8;
 }
 #gitfixed {
   position: fixed;
@@ -475,18 +497,21 @@ h1 {
   opacity: 0;
   z-index: 1;
   transition: opacity 0.4s;
-
 }
-#mailfixed > a > svg{
- height: 20px;
- width: 20px; 
+#mailfixed > a > svg {
+  height: 20px;
+  width: 20px;
+  color: #a8b2d8;
+  transition: color 0.2s;
 }
-#mailfixed > a{
+#mailfixed > a > svg:hover {
+  color: #64ffda;
+}
+#mailfixed > a {
   text-decoration: none;
-  color: #ffffffde;
-
+  color: #a8b2d8;
 }
-#mailfixed{
+#mailfixed {
   position: fixed;
   top: 65%;
   left: 30px;
@@ -496,50 +521,50 @@ h1 {
 }
 
 @media only screen and (max-width: 768px) {
-  #sections{
+  #sections {
     display: none;
   }
-  #Header{
+  #Header {
     position: absolute;
   }
-  #arrow{
+  #arrow {
     left: 80%;
   }
-  #linkedinfixed{
+  #linkedinfixed {
     display: None;
   }
-  #gitfixed{
+  #gitfixed {
     display: None;
   }
-  #mailfixed{
+  #mailfixed {
     display: none;
   }
-  #projectSection > div{
+  #projectSection > div {
     font-family: monospace;
     font-size: 15px;
   }
-  #line{
+  #line {
     display: None;
   }
-  #about{
+  #about {
     width: 60%;
   }
-  #about-name{
+  #about-name {
     font-size: 8vw;
   }
-  #about-para{
+  #about-para {
     width: 100%;
   }
-  #lineProject{
+  #lineProject {
     display: none;
   }
-  .name-project{
+  .name-project {
     font-size: 15px;
   }
-  #projects{
+  #projects {
     padding-top: 50px;
   }
-  #projects > div{
+  #projects > div {
     width: 100%;
     height: 100%;
     display: flex;
@@ -547,45 +572,41 @@ h1 {
     align-items: center;
     justify-content: center;
   }
-
-  .project2-win{
+  .project2-win {
     padding: 20px;
     width: 80%;
-  opacity: 0;
+    opacity: 0;
   }
-  .type-Project{
+  .type-Project {
     font-family: monospace;
   }
-  .para-project{
+  .para-project {
     padding-right: 0px;
     width: 95%;
     font-size: 3.2vw;
     opacity: 0.8;
-    
   }
-  .stack-project{
-
+  .stack-project {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
   }
-  .stack-project > div{
+  .stack-project > div {
     font-size: 13px;
   }
-.title-contact{
-  font-size: 4.2vw;
-}
-.get-in-touch{
-  font-size: 10vw;
-}
-.p-contact{
-  font-size: 4.2vw;
-  padding: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-}
-#bt-hello{
-  padding: 15px;
-}
+  .title-contact {
+    font-size: 4.2vw;
+  }
+  .get-in-touch {
+    font-size: 10vw;
+  }
+  .p-contact {
+    font-size: 4.2vw;
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  #bt-hello {
+    padding: 15px;
+  }
 }
