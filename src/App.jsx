@@ -20,6 +20,14 @@ function App() {
   const projects = [
   {
     type: "Most Recent",
+    title: "DocMind",
+    description:
+      "Full-stack, white-label RAG chatbot platform enabling businesses to train support bots on their own documents. Features vector similarity search with Supabase pgvector and multi-tenant Node.js + Spring Boot services.",
+    stack: ["React.js", "Node.js", "Spring Boot", "Supabase", "pgvector"],
+    github: "https://github.com/rehmansha1/DocMind",
+  },
+  {
+    type: "Featured Project",
     title: "LocalAI",
     description:
       "Fully local AI app running GGUF models on-device using llama.cpp. Supports chat, image understanding, and offline inference.",
