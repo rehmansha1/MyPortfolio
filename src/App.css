@@ -520,12 +520,99 @@ h1 {
   transition: opacity 0.4s;
 }
 
+/* Hamburger Button styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+  margin-right: 50px;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: #64ffda;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+
+/* Mobile Sidebar Drawer styling */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: #112240ee;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: -10px 0px 30px -15px rgba(2,12,27,0.7);
+  transition: all 0.3s ease-in-out;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #1e3a5f55;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  text-align: center;
+}
+
+.mobile-menu-links > div {
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.mobile-menu-links a {
+  text-decoration: none;
+  color: #a8b2d8;
+  transition: color 0.2s;
+}
+
+.mobile-menu-links a:hover {
+  color: #64ffda;
+}
+
 @media only screen and (max-width: 768px) {
   #sections {
     display: none;
   }
+  .hamburger {
+    display: flex;
+  }
   #Header {
     position: absolute;
+    width: 100% !important;
+    min-width: 100% !important;
+    margin-right: 0px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box;
   }
   #arrow {
     left: 80%;

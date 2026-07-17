@@ -7,7 +7,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 function App() {
   gsap.registerPlugin(ScrollTrigger);
-const projects = [
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [menuOpen]);
+
+  const projects = [
   {
     type: "Most Recent",
     title: "LocalAI",
@@ -335,7 +345,7 @@ useEffect(() => {
         <div id="logo-outer" onClick={() => window.location.reload()}>
           <svg
             id="logo"
-            class="square"
+            className="square"
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
@@ -343,10 +353,10 @@ useEffect(() => {
             fill="transparent"
           >
             <path
-              class="path"
+              className="path"
               stroke="white"
-              stroke-width="15"
-              stroke-linejoin="round"
+              strokeWidth="15"
+              strokeLinejoin="round"
               d="M287-146 94-480l193-334h386l193 334-193 334H287Z"
             ></path>
           </svg>
@@ -365,6 +375,31 @@ useEffect(() => {
             <a href="#contactSection">03. Contact</a>
           </div>
         </div>
+
+        <button 
+          className={`hamburger ${menuOpen ? "open" : ""}`} 
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+
+        <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+          <div className="mobile-menu-links">
+            <div onClick={() => { setMenuOpen(false); document.getElementById("about-outer").scrollIntoView({ behavior: "smooth" }); }}>
+              <a href="#about-outer">01. About</a>
+            </div>
+            <div onClick={() => { setMenuOpen(false); document.getElementById("projects").scrollIntoView({ behavior: "smooth" }); }}>
+              <a href="#projects">02. Projects</a>
+            </div>
+            <div onClick={() => { setMenuOpen(false); document.getElementById("contactSection").scrollIntoView({ behavior: "smooth" }); }}>
+              <a href="#contactSection">03. Contact</a>
+            </div>
+          </div>
+        </div>
+
         <div id="boxhover"></div>
       </div>
 
